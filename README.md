@@ -1,1 +1,1 @@
-# Fincal_programm
+# Financial program
