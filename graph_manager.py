@@ -1,28 +1,7 @@
-#File that manages the graphs, makes and displays them
+#File that manages the graphs, runs them
 
 #Made by Pedro
 
-#Import necessary libraries
-import pandas as pd
-import matplotlib.pyplot as plt
-
-#List of all categories
-categories = ["housing", "transportation", "food", "utility", "clothing", "medical", "insurance", "household", "personal", "debt", "education", "saving", "gift", "entertainment", "other"]
-
 #Main graph function that prints out the pie chrt
 def graph_main():
-    # Read the CSV
-    reader = pd.read_csv('user_expenses.csv')
-
-    # Group by category and sum the amounts
-    categoryTotals = reader.groupby("category")["amount"].sum()
-
-    # Filter to include only predefined categories
-    categoryTotals = categoryTotals[categoryTotals.index.isin(categories)]
-
-    # Plot the pie chart
-    plt.figure(figsize=(8, 8))
-    plt.pie(categoryTotals, labels=categoryTotals.index, autopct="%1.1f%%", startangle=140)
-    plt.title("Expenses by Category")
-    plt.show()
-    plt.savefig('chart.png')
+    choice = input("Would you like to:\n1. Manage profile\n2. Manage income and expenses\n3. Manage budget\n4. Manage savings\n5. See graphs\n6. Leave\n")
