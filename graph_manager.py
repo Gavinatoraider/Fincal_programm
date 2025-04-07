@@ -1,7 +1,20 @@
 #File that manages the graphs, runs them
 
+#Imports the graph files
+from pie import graph as pie_chart
+from line import graph as line_graph
+from bar import graph as bar_graph
+
 #Made by Pedro
 
 #Main graph function that prints out the pie chrt
 def graph_main():
-    choice = input("Would you like to:\n1. Manage profile\n2. Manage income and expenses\n3. Manage budget\n4. Manage savings\n5. See graphs\n6. Leave\n")
+    choice = input("Would you like to see:\n1. Expenses by category pie chart\n2. Income and expenses line graph\n3. Expenses to bar graph\n")
+    if choice == "1":
+        pie_chart()
+    elif choice == "2":
+        pass
+    elif choice == "3":
+        pass
+    else:
+        print("Invalid chart choice, please answer with numbers")
