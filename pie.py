@@ -18,6 +18,7 @@ def graph():
     #Filter to include only predefined categories
     categoryTotals = categoryTotals[categoryTotals.index.isin(categories)]
 
+    
     #Plot the pie chart
     plt.figure(figsize=(8, 8))
     plt.pie(categoryTotals, labels=categoryTotals.index, autopct="%1.1f%%", startangle=140)
