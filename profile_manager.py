@@ -3,6 +3,7 @@ import pandas as pd
 
 # Made by Pedro Elias Souza
 
+#Function that uses pandas to read and edit the chosen parts of the profile base off what the user choses
 def edit_profile():
     reader = pd.read_csv('user.csv')
 
@@ -34,7 +35,7 @@ def profile_main():
     choice = input("Would you like to:\n1. Log in\n2. Edit account\n3. Create new account\n4. Log out\n5. Leave\n")
 
     if choice == "1":
-        def log_in():
+        def log_in(): #Whole login thing, wher it checks if user got name and password right
             user = input("Enter your username (default is 'username'): ")
             password = input("Enter your password (default is 'Password_123'): ")
             if user == reader.loc[0, 'username'] and password == reader.loc[0, 'password']:
@@ -64,5 +65,5 @@ def profile_main():
     elif choice == "5":
         print("Exiting")
 
-    else:
+    else: #Error managing
         print("Invalid input. Options are 1, 2, 3, or 4.")

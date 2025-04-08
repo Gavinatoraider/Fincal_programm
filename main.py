@@ -10,35 +10,55 @@ from savings import savings
 from budgeting import budget
 from income_expense import income_expenses
 
-
-
-
-#Function
+#Function that checks for what the thing we should do is
 def main():
-    choice = input("Would you like to:\n1. Manage profile\n2. Manage income and expenses\n3. Manage budget\n4. Manage savings\n5. See graphs\n6. Leave\n")
+    #Load the user profile to check if they are logged in
+    reader = pd.read_csv('user.csv')
+    
+    #Check if the user is logged in
+    is_logged_in = reader.loc[0, 'status'] == 'in'
+
+    if is_logged_in:
+        #If logged in, show full menu
+        choice = input("Would you like to:\n1. Manage profile\n2. Manage income and expenses\n3. Manage budget\n4. Manage savings\n5. See graphs\n6. Leave\n")
+    else:
+        #If not logged in, show limited menu
+        choice = input("You need to log in to access most options.\nWould you like to:\n1. Manage profile\n2. Leave\n")
 
     if choice == "1":
         profile_main()
 
     elif choice == "2":
-        income_expenses()
+        if is_logged_in:
+            income_expenses()
+        else:
+            print("Please log in to manage income and expenses.")
 
     elif choice == "3":
-        budget()
+        if is_logged_in:
+            budget()
+        else:
+            print("Please log in to manage your budget.")
 
     elif choice == "4":
-        savings()
+        if is_logged_in:
+            savings()
+        else:
+            print("Please log in to manage your savings.")
 
     elif choice == "5":
-        graph_main()
+        if is_logged_in:
+            graph_main()
+        else:
+            print("Please log in to see graphs.")
 
     elif choice == "6":
         print("Goodbye!")
         exit()
 
-    else:
+    else:  #Error handling for invalid input
         print("Invalid input")
 
-#Function called forever (untill the code is terminated with exit())
+#Function called forever (until the code is terminated with exit())
 while True:
     main()

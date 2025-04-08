@@ -1,9 +1,11 @@
 #File for making the line chart of income vs expenses per month
 #Made by Pedro
 
+#Imports the needed libraries
 import pandas as pd
 import matplotlib.pyplot as plt
 
+#Function where the graph is made and printed
 def graph():
     #Read the CSVs
     income = pd.read_csv('user_income.csv')

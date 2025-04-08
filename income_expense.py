@@ -23,6 +23,7 @@ def view_data():
     except FileNotFoundError:
         print("No expense data found.")
 
+#Function that asks the user what they want to do and goes to file/funciton where it is
 def income_expenses():
     print("Income & Expenses Menu\n1. Add Income Entry\n2. Add Expense Entry\n3. View Income and Expenses\n4. Back to Main Menu")
     choice = input("Choose a number: ").strip()
@@ -35,5 +36,5 @@ def income_expenses():
         view_data()
     elif choice == "4":
         return
-    else:
+    else: #Error managing
         print("Not a valid choice!")
