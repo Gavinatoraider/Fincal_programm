@@ -2,12 +2,16 @@
 
 #Made by Pedro Elias Souza
 
-#Importing all the files and functions to main so they can be called
+#Importing all the libraries, files and functions to main so they can be called
+import pandas as pd
 from graph_manager import graph_main
 from profile_manager import profile_main
 from savings import savings
 from budgeting import budget
 from income_expense import income_expenses
+
+
+
 
 #Function
 def main():

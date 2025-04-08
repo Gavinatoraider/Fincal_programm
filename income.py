@@ -1,5 +1,11 @@
+#File for adding income stuff
+
+#Imports needed library
 import pandas as pd
 
+#Income and expenses part was split between all members
+
+#Function is to get the month of the user in right formatting without any impossible days
 def get_month():
     while True:
         month = input("Enter month (MM): ").zfill(2)
@@ -8,7 +14,9 @@ def get_month():
         else:
             print("Invalid month.")
 
+#Fucntion to get the day to add to month making sure it matches and is possible
 def get_day(month):
+    #variables for which months have which amount of days
     thirty_one = ["01", "03", "05", "07", "08", "10", "12"]
     thirty = ["04", "06", "09", "11"]
 
@@ -27,6 +35,7 @@ def get_day(month):
         else:
             print("Invalid day for the month.")
 
+#function gets year and makes sure it is valid
 def get_year():
     while True:
         year = input("Enter year (YYYY): ")
@@ -35,19 +44,22 @@ def get_year():
         else:
             print("Invalid year.")
 
+#Puts month, year and day toghether
 def get_date():
     month = get_month()
     day = get_day(month)
     year = get_year()
     return f"{month}/{day}/{year}"
 
+#Function to get the amount needed of money
 def get_amount():
     while True:
         try:
             return float(input("Enter amount: "))
-        except ValueError:
+        except:
             print("Not a valid number.")
 
+#Main fucntion for this, asks all the questions and then puts them in the csv
 def add_income():
     date = get_date()
     amount = get_amount()

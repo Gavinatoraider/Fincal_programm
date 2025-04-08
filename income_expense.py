@@ -1,7 +1,13 @@
+#File that manages both income and expenses addition (also views the income and expenses)
+
+#Imports needed libraries and other file's fucntions
 import pandas as pd
 from income import add_income
 from expenses import add_expense
 
+#Contributed by everyone
+
+#Function to see the income and expenses
 def view_data():
     try:
         print("\nIncome:")
