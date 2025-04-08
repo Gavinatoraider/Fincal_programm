@@ -6,6 +6,8 @@
 from graph_manager import graph_main
 from profile_manager import profile_main
 from savings import savings
+from budgeting import budget
+from income_expense import income_expenses
 
 #Function
 def main():
@@ -15,10 +17,10 @@ def main():
         profile_main()
 
     elif choice == "2":
-        pass
+        income_expenses()
 
     elif choice == "3":
-        pass
+        budget()
 
     elif choice == "4":
         savings()
