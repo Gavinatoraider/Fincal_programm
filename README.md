@@ -2,52 +2,40 @@
 
 ## Project Description
 ---
-The purpose of this project is to help the user manage their finances by letting them add, store and manage data using this program
+The purpose of this project is to help the user manage their finances by letting them add, store, manage data and set budgets using this program
 
-## Installation
----
-Not used for this class
 
 ## Execution and usage
-Paragraph describing how to use the project
-![image](relative path to the image NOTE: Image has to be saved in the repository REMINDER: Show what the project looks like when running)  
+Install all the libraries used in the project and then run the code after that the program will tell you what to do
+
 
 ## Used Technologies
 ---
-+ First library in the repository
-`pip install code for the lbrary`
++ pandas
+`pip install pandas`
 
-+ Second library in the repository
-`pip install code for the lbrary`
++ Matplotlib
+`pip install matplotlib`
 
-+ Third library in the repository
-`pip install code for the lbrary`
++ NumPy
+`pip install numpy`
 
 ## Current Features
 ---
-+ First feature I am proud of
-+ Second feature I am proud of
-+ Third feature I am proud of
++ Libraries that make pie charts that show expenses by category
++ A sign out and password system so your data stays secure and safe
++ Multiple CSVs that store and remember your information for you to use
 
-## Contributions
----
-Not used for this class
 
 ## Contributors
 ---
-+ Person who helped - what they did
-+ Person who helped - what they did
-+ Person who helped - what they did
++ Pedro - Main Function, Graphs, Profiles, Fixed Bugs, Income and Expenses
++ Asher  - Budgeting Function, Read Me, Income and Expenses
++ Gavin  - Savings Function, Income and Expenses
 
 ## Author's Information
 ---
-Short paragraph about you (Each member of the group)
-Potentially has contact information
++ Pedro - Pedro Souza is currently a high school freshman studying computer science, on of the contributors of this project is his school Github account
++ Asher - Asher Wangia is a 9th grader learning about coding in Python
++ Gavin - Gavin Pierce is a contributor currently learning about python
 
-## Change Log
----
-Not used for this class
-
-## License
----
-Not used for this class
