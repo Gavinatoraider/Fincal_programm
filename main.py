@@ -5,6 +5,7 @@
 #Importing all the files and functions to main so they can be called
 from graph_manager import graph_main
 from profile_manager import profile_main
+from savings import savings
 
 #Function
 def main():
@@ -20,7 +21,7 @@ def main():
         pass
 
     elif choice == "4":
-        pass
+        savings()
 
     elif choice == "5":
         graph_main()
