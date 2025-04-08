@@ -3,7 +3,6 @@
 #Imports the graph files
 from pie import graph as pie_chart
 from line import graph as line_graph
-from bar import graph as bar_graph
 
 #Made by Pedro
 
@@ -13,7 +12,7 @@ def graph_main():
     if choice == "1":
         pie_chart()
     elif choice == "2":
-        pass
+        line_graph()
     elif choice == "3":
         pass
     else:

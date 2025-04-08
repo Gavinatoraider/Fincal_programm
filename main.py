@@ -4,13 +4,14 @@
 
 #Importing all the files and functions to main so they can be called
 from graph_manager import graph_main
+from profile_manager import profile_main
 
 #Function
 def main():
     choice = input("Would you like to:\n1. Manage profile\n2. Manage income and expenses\n3. Manage budget\n4. Manage savings\n5. See graphs\n6. Leave\n")
 
     if choice == "1":
-        pass
+        profile_main()
 
     elif choice == "2":
         pass

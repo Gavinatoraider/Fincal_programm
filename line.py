@@ -1,24 +1,39 @@
-#File for making the pie chart of expenses by category
-
-#Made by Pedro
+# File for making the line chart of income vs expenses per month
+# Made by Pedro
 
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy 
-
-#List of all categories
-categories = ["housing", "transportation", "food", "utility", "clothing", "medical", "insurance", "household", "personal", "debt", "education", "saving", "gift", "entertainment", "other"]
 
 def graph():
-    #Read the CSV
-    reader = pd.read_csv('user_expenses.csv')
+    # Read the CSVs
+    income = pd.read_csv('user_income.csv')
+    expenses = pd.read_csv('user_expenses.csv')
 
-    # evenly sampled time at 200ms intervals
-    t = np.arange(0., 5., 0.2)
+    # Convert date columns to datetime
+    income['date'] = pd.to_datetime(income['date'])
+    expenses['date'] = pd.to_datetime(expenses['date'])
 
-    # red dashes, blue squares and green triangles
-    plt.plot(t, t, 'r--', t, t**2, 'bs', t, t**3, 'g^')
-    plt.show()
-    plt.title("Expenses by Category")
-    plt.show()
+    # Create "month" column for grouping
+    income['month'] = income['date'].dt.to_period('M')
+    expenses['month'] = expenses['date'].dt.to_period('M')
+
+    # Group by month and sum amounts
+    monthly_income = income.groupby('month')['amount'].sum()
+    monthly_expenses = expenses.groupby('month')['amount'].sum()
+
+    # Align both series (fill missing months with 0)
+    combined = pd.concat([monthly_income, monthly_expenses], axis=1).fillna(0)
+    combined.columns = ['Income', 'Expenses']
+
+    # Plotting
+    plt.figure(figsize=(10, 6))
+    plt.plot(combined.index.astype(str), combined['Income'], label='Income', marker='o')
+    plt.plot(combined.index.astype(str), combined['Expenses'], label='Expenses', marker='x')
+    plt.xlabel('Month')
+    plt.ylabel('Amount')
+    plt.title('Monthly Income vs Expenses')
+    plt.legend()
+    plt.xticks(rotation=45)
+    plt.tight_layout()
     plt.savefig('chart.png')
+    plt.show()

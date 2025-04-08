@@ -1,4 +1,4 @@
-date(MM/DD/YYYY),amount,source
+date,amount,source
 01/01/2000,1000,job
 01/02/2000,50,gift
 01/02/2020,900,job
