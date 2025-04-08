@@ -2,29 +2,36 @@
 
 #Made by Pedro Elias Souza
 
+#Importing all the files and functions to main so they can be called
+from graph_manager import graph_main
+from profile_manager import profile_main
+
 #Function
-def main()
-    choice = input("“Would you like to:\n1. Manage profile\n2. Manage income and expenses\n3. Manage budget\n4. Manage savings\n5. See graphs\n6. Leave"
+def main():
+    choice = input("Would you like to:\n1. Manage profile\n2. Manage income and expenses\n3. Manage budget\n4. Manage savings\n5. See graphs\n6. Leave\n")
 
-    if choice == 1:
+    if choice == "1":
+        profile_main()
+
+    elif choice == "2":
         pass
 
-    elif choice == 2:
+    elif choice == "3":
         pass
 
-    elif choice == 3:
+    elif choice == "4":
         pass
 
-    elif choice == 4:
-        pass
+    elif choice == "5":
+        graph_main()
 
-    elif choice == 5:
-        pass
-
-    elif choice == 6:
+    elif choice == "6":
         print("Goodbye!")
         exit()
 
+    else:
+        print("Invalid input")
+
 #Function called forever (untill the code is terminated with exit())
-while True
+while True:
     main()
