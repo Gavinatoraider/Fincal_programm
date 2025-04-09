@@ -32,6 +32,11 @@ Install all the libraries used in the project and then run the code after that t
 + Pedro - Main Function, Graphs, Profiles, Fixed Bugs, Income and Expenses
 + Asher  - Budgeting Function, Read Me, Income and Expenses
 + Gavin  - Savings Function, Income and Expenses
++ Official pandas documentation
++ Official matplotlib documentation
++ Geeks4Geeks
++ RealPython
++ StackOverflow
 
 ## Author's Information
 ---
